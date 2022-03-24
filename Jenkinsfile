@@ -14,6 +14,18 @@
     }
   } 
             }
+    stage('Test'){
+      steps{
+      echo 'Testing'
+      }
+    }
+     stage('Deploy to heroku'){
+     steps{
+         withCredentials([usernameColonPassword(credentialsId: 'heroku', variable: 'HEROKU_CREDENTIALS' )]){
+      sh 'git push https://${HEROKU_CREDENTIALS}@git.heroku.com/fierce-harbor-37915.git master'
+    }
+     }
+ }
         }
     }
   
