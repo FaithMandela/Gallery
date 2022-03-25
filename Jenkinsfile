@@ -51,7 +51,7 @@
      stage('Deploy to heroku'){
      steps{
          withCredentials([usernameColonPassword(credentialsId: 'heroku', variable: 'HEROKU_CREDENTIALS' )]){
-      sh 'git push https://${HEROKU_CREDENTIALS}@git.heroku.com/fierce-harbor-37915.git master'
+      sh 'git push https://${HEROKU_CREDENTIALS}@git.heroku.com/mighty-beyond-88506.git master'
     }
      }
  }
