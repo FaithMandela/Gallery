@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "",
   "main": "server.js",
+  "engines": {
+    "node": "17.x"
+  },
   "scripts": {
     "test": "mocha --exit"
   },
