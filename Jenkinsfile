@@ -25,14 +25,15 @@
 
         EMAIL_SUBJECT_FAILURE = "Status: 'FAILURE' -Job \'${env.JOB_NAME}:${env.BUILD_NUMBER}\'" 
 
-        EMAIL_RECEPIENT = 'beckychellah080@gmail.com'
+        EMAIL_RECEPIENT = 'faithmandela@gmail.com'
 
     }
 
   stages { 
     stage('clone repository') {
       steps { 
-        git 'https://github.com/Beckychellah/gallery'
+        git 'https://github.com/FaithMandela/Gallery
+        
       }
     }
         stage('Build') { 
@@ -70,7 +71,7 @@
                       <p><i>(Build log is attached.)</i></p>
                     """,
                 subject: "Status: 'SUCCESS' -Job \'${env.JOB_NAME}:${env.BUILD_NUMBER}\'", 
-                to: 'beckychellah080@gmail.com'
+                to: 'faithmandela@gmail.com'
         }
         failure {
             emailext attachLog: true, 
@@ -84,7 +85,7 @@
                       <p><i>(Build log is attached.)</i></p>
                     """,
                 subject: "Status: FAILURE -Job \'${env.JOB_NAME}:${env.BUILD_NUMBER}\'", 
-                to: 'beckychellah080@gmail.com'
+                to: 'faithmandela@gmail.com
         }
 }
     }
